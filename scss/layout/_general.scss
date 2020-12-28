@@ -1,0 +1,49 @@
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	outline: none;
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	scroll-behavior: smooth;
+}
+
+body, html {
+	min-height: 100%;
+	width: 100%;
+}
+
+.slick-active {
+
+	.slider__pic {
+		
+		&:hover {
+
+            &::before {
+                bottom: 0;
+            }
+
+            .slider__img {
+                opacity: .1;
+
+            }
+
+            .slider__info {
+                bottom: 0;
+            }
+
+        }
+	}
+	
+	.slider__gray {
+		opacity: 0;
+	}
+}
+
+.icon-arrow {
+	font-size: 38px;
+	transform: translateX(15%);
+}

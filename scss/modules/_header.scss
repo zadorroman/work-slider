@@ -1,0 +1,45 @@
+.header {
+    overflow-y: hidden;
+
+    &__subtitle {
+        font: 600 18px/20px $font;
+        color: #303030;
+        letter-spacing: 3.6px;
+        text-transform: uppercase;
+        margin: 65px auto 30px;
+    }
+
+    &__title {
+        font: 600 86px/90px $font;
+        text-transform: uppercase;
+        margin: 0 auto 100px;
+        color: #000;
+        position: relative;
+
+        &::before {
+            background: url('../images/2.svg')no-repeat center center;
+            background-size: cover;
+            content: '';
+            @include size(44px);
+            @include pos($t:54.1%, $l:-4.2%);
+            z-index: 2;
+        }
+
+        &::after {
+            background: url('../images/1.svg')no-repeat center center;
+            background-size: cover;
+            content: '';
+            @include size(30px);
+            @include pos($t:-18.75%, $r:14.42%);
+            z-index: 2;
+        }
+        
+    }
+
+    &__title, &__subtitle {
+        max-width: 1050px;
+        width: 100%;
+        text-align: center;
+    }
+
+}

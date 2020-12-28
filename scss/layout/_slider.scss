@@ -1,0 +1,116 @@
+.slider {
+    position: relative;
+    margin-left: 6.5%;
+
+    &__list {
+        display: flex;
+
+    }
+
+    &__item {
+        margin-left: 45px;
+        max-width: 440px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+
+    &__img {
+        min-width: 100%;
+        height: 100%;
+        transition: all .3s;
+        z-index: 3;
+    }
+
+    &__info {
+        padding: 35px 30px;
+        @include pos($b:-400px, $l:0);
+        @include size(100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        text-transform: uppercase;
+        opacity: 1;
+        transition: all .3s;
+        color: #fff;
+    }
+
+    // &__arrows {
+    //     display: flex;
+    //     @include align($pos: absolute);
+    //     @include size(100%);
+    //     transform: translateY(-10%);
+    //     z-index: 5;
+    // }
+
+    // &__arrow {
+    //     border: solid #000;
+    //     border-width: 0 1px 1px 0;
+    //     display: flex;
+    //     @include size(20px);
+    //     transform: translateX(-25%);
+    //     z-index: 999999999999999999;
+    // }
+
+    &-prev {
+        @include pos($l: -6.5%, $t:40%);
+        @include size(100px);
+        border: 1px solid #000;
+        border-radius: 50%; 
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        padding: 0 1px 1px 0;
+        z-index: 5;
+    }
+
+    &-next {
+        @extend .slider-prev;
+        left: auto;
+        right: 0.5%;
+        transform: rotate(180deg);
+    }
+
+    &__pic {
+        position: relative;
+        @include size(440px, 400px);
+        overflow: hidden;
+        cursor: pointer;
+
+        &--last {
+            max-width: 333px;
+            width: 100%;
+        }
+
+        &::before {
+            content: '';
+            @include pos($b:-400px, $l:0);
+            @include size(100%);
+            background-color: #1bf1ad;
+            transition: all .3s;
+        }
+    }
+
+    &__gray {
+        @include size(100%);
+        @include pos($t:0, $l:0);
+        background-color: #e1e1e9;
+        opacity: .8;
+        transition: all .3s;
+        z-index: 2;
+    }
+
+
+
+    &__title {
+        font: 600 28px/24px $font;
+        letter-spacing: 5.6px;
+        margin-bottom: 15px;
+    }
+
+    &__author {
+        font: 600 12px/24px $font;
+        letter-spacing: 2.4px;
+    }
+}
